@@ -1,5 +1,6 @@
 # Espresso tips
 
+* Espresso can become messy very fast - using the Page Object pattern is pretty helpful for writing readable (and maintainable tests)
 * Don't use `pressBack()` to close the keyboard as it can be inconsistent - use `closeSoftKeyboard()` instead
 * `pressBack` can be called on any screen so it's good to pair with an assertion to check you're where you think you are before calling
 * It's good to keep the above in mind for pretty much any kind of action that might work on multiple screens - make sure the test verifies it is in the right place before it tries to do something
