@@ -8,3 +8,4 @@
 * Always use `RecyclerViewActions` instead of trying to manually scroll to items on screen
 * `Handler#postDelayed` (or just `post`) in code can cause flakes in Espresso - wrap Handler in an interface you can swap out in test with something integrates with `CountingIdlingResource` to make Espresso aware of posted UI jobs
 * `LiveData#post` runs into the same problems as above - Switching out ArchTaskExecutor with `CountingTaskExecutorRule` and then integrating that with an `IdlingResource` can solve this for you
+* If you really can't solve a timing issue (specifically Espresso failing before some transition occurs/data loads etc) then using a wait helper that repeats the asssertion until it passes (and fails after a given timeout) is probably a good option.
